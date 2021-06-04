@@ -1,13 +1,12 @@
-version: '3.7'
+version: '3.9'
 services:
   backend:
     container_name: template-ts-api
     build:
       dockerfile: ./dockerfile
       context: ./
-    image: ./
     ports:
-      - "4242:4242"
+      - "4243:4242"
     networks:
       - turreta_network
     depends_on:
@@ -19,9 +18,9 @@ services:
    ports:
       - "5434:5432"
    environment:
-     - POSTGRES_USER=DB_user
-     - POSTGRES_PASSWORD=DB_password
-     - POSTGRES_DB=DB_name
+     - POSTGRES_USER=root
+     - POSTGRES_PASSWORD=root
+     - POSTGRES_DB=2d0
    networks:
      - turreta_network
 networks:
