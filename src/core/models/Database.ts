@@ -7,35 +7,31 @@ import { createConnection, Connection } from 'typeorm'
 import { addUser } from '../fixtures/insert.users'
 import { PrismaClient } from '@prisma/client'
 
-
 export default class Database {
-	private static _instance: Database | null = null
-	private _connection: Connection | null = null
+  private static _instance: Database | null = null
+  private _connection: Connection | null = null
 
-	private constructor() { }
+  private constructor() {}
 
-	public static getInstance(): Database {
-		if (!Database._instance) {
-			Database._instance = new Database()
-		}
+  public static getInstance(): Database {
+    if (!Database._instance) {
+      Database._instance = new Database()
+    }
 
-		return Database._instance
-	}
+    return Database._instance
+  }
 
-	public async authenticate() {
-		dotenv.config()
+  public async authenticate() {
+    dotenv.config()
 
-		const founded = (process.env.DATABASE_URL as string).match(/^(postgres):\/\/(.*):(.*)@(.*):(\d+)\/(.*)$/)
+    const founded = (process.env.DATABASE_URL as string).match(/^(postgres):\/\/(.*):(.*)@(.*):(\d+)\/(.*)$/)
 
-		if (!founded) {
-			throw new Error('[ERROR] Please check your DATABASE_URL value')
-		}
+    if (!founded) {
+      throw new Error('[ERROR] Please check your DATABASE_URL value')
+    }
 
-		const [, , username, password, host, port, database] = founded
+    const [, , username, password, host, port, database] = founded
 
-		const prisma = new PrismaClient()
-
-		
-
-	}
+    const prisma = new PrismaClient()
+  }
 }
