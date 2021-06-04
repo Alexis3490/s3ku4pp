@@ -1,11 +1,10 @@
-FROM node:latest
+FROM node:14
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
 RUN yarn
-
 COPY . .
 
 EXPOSE 4242
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
