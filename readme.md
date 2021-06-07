@@ -5,9 +5,10 @@
 
 ## Prisma
 ### Start Projet before migrate schema prisma
+```docker-compose up -d --build```\
 ````yarn dev````
 ### Migrate schema prisma
 ```npx prisma migrate dev --name "init" --preview-feature```
 
-## Launch Projet on Docker
-```docker-compose up -d --build```
+## Api on web
+https://localhost:4243/api
