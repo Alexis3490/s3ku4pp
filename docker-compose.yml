@@ -21,7 +21,7 @@ services:
     networks:
       - sk3u4pp_network
     depends_on:
-      - postgres
+      - backend
 
   postgres:
     container_name: template-ts-db

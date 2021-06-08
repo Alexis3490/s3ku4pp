@@ -11,4 +11,4 @@
 ```npx prisma migrate dev --name "init" --preview-feature```
 
 ## Api on web
-https://localhost:4243/api
+https://localhost:4245
