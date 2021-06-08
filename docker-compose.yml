@@ -3,8 +3,8 @@ services:
   backend:
     container_name: template-ts-api
     build:
-      dockerfile: ./dockerfile
       context: ./
+      dockerfile: ./express/Dockerfile
     ports:
       - "4243:4242"
     networks:
@@ -14,15 +14,14 @@ services:
   ngnix:
     container_name: ngnix_api
     build:
-      dockerfile: ./dockerfilengnix
       context: ./
+      dockerfile: ./nginx/Dockerfile
     ports:
       - "4245:80"
     networks:
       - sk3u4pp_network
     depends_on:
       - backend
-
   postgres:
     container_name: template-ts-db
     image: "postgres:latest"
@@ -38,4 +37,3 @@ services:
 networks:
   sk3u4pp_network:
     driver: bridge
-

@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 
 import { argv, prelude, mlog } from './core/libs/utils'
-import Server from './Server'
+import Server from './server'
 import dotenv from 'dotenv'
 
 const main = async (): Promise<void> => {
