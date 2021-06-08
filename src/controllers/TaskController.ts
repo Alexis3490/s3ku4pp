@@ -2,9 +2,7 @@ import { Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-
 import { CREATED } from '../core/constants/api'
-
 
 class TaskController {
 	static async getTask(req: Request, res: Response) {
