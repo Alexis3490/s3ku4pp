@@ -5,7 +5,7 @@
 
 ## Prisma
 ### Start Projet before migrate schema prisma
-```./script/startProjet.sh```
+```./script/startProjet.sh```\
 ```docker-compose up -d --build```\
 ````yarn dev````
 ### Migrate schema prisma
