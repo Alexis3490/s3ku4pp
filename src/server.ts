@@ -49,8 +49,8 @@ export default class Server {
 
     const httpsServer = https.createServer(
       {
-        key: fs.readFileSync(path.join(__dirname, '../express/cert', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, '../express/cert', 'cert.pem')),
+        key: fs.readFileSync(path.join(__dirname, '../express/cert', 's3ku4pp.key')),
+        cert: fs.readFileSync(path.join(__dirname, '../express/cert', 's3ku4pp.crt')),
       },
       this._app
     )

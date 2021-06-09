@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: ./express/Dockerfile
     ports:
-      - "4243:4242"
+      - ${PORT_EXPRESS_DOCKER}:${PORT_EXPRESS}
     networks:
       - sk3u4pp_network
     depends_on:
@@ -17,7 +17,7 @@ services:
       context: ./
       dockerfile: ./nginx/Dockerfile
     ports:
-      - "4245:80"
+      - ${PORT_NGINX_DOCKER}:443
     networks:
       - sk3u4pp_network
     depends_on:
@@ -27,11 +27,11 @@ services:
     image: "postgres:latest"
     restart: "always"
     ports:
-      - "5434:5432"
+      - ${PORT_DB_DOCKER}:5432
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=2d0
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     networks:
       - sk3u4pp_network
 networks:
