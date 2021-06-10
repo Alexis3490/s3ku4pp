@@ -116,3 +116,4 @@ temp/
 .build/
 .env
 express/cert
+prisma/migrations

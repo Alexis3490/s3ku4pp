@@ -5,7 +5,7 @@
 
 ## Prisma
 ### Start Projet before migrate schema prisma
-```./script/startProjet.sh```\
+```./script/startProject.sh```\
 ```docker-compose up -d --build```\
 ### Migrate schema prisma
 ```npx prisma migrate dev --name "init" --preview-feature```
