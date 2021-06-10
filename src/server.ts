@@ -5,16 +5,12 @@ import https from 'https'
 import fs from 'fs'
 import path from 'path'
 import { RequestListener } from 'http'
-
+import cors from 'cors'
 
 import { mlog } from '@/core/libs/utils'
-import Database from '@/core/models/Database'
-
+import Database from '@/core/models/database'
 import '@/core/middlewares/passport'
-
 import api from '@/routes/api'
-
-import cors from 'cors'
 
 export default class Server {
   private _host: string
@@ -53,8 +49,8 @@ export default class Server {
 
     const httpsServer = https.createServer(
       {
-        key: fs.readFileSync(path.join(__dirname, '../cert', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, '../cert', 'cert.pem')),
+        key: fs.readFileSync(path.join(__dirname, '../express/cert', 's3ku4pp.key')),
+        cert: fs.readFileSync(path.join(__dirname, '../express/cert', 's3ku4pp.crt')),
       },
       this._app
     )

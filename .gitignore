@@ -114,3 +114,6 @@ temp/
 # End of https://www.gitignore.io/api/node
 
 .build/
+.env
+express/cert
+prisma/migrations
