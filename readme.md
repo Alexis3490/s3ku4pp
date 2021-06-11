@@ -4,10 +4,11 @@
 ```yarn``` 
 
 ## Prisma
-### Start Projet before migrate schema prisma
+### Launch script to generate .env and cert
 ```sh ./script/startProject.sh```\
-```docker-compose up -d --build```\
+### Launch docker compose
+```docker-compose up -d --build```
 ### Migrate schema prisma
-```cd express```
+```cd express```\
 ```npx prisma migrate dev --name "init" --preview-feature```
 
