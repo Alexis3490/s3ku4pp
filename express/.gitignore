@@ -43,7 +43,7 @@ bower_components
 build/Release
 
 # Dependency directories
-../node_modules/
+node_modules/
 jspm_packages/
 .idea/*
 .DS_Store
@@ -114,6 +114,6 @@ temp/
 # End of https://www.gitignore.io/api/node
 
 .build/
-express/.env
+.env
 express/cert
-express/prisma/migrations
+../prisma/migrations

@@ -3,8 +3,8 @@ services:
   backend:
     container_name: template-ts-api
     build:
-      context: ./
-      dockerfile: ./express/Dockerfile
+      context: ./express
+      dockerfile: ./Dockerfile
     ports:
       - ${PORT_EXPRESS_DOCKER}:${PORT_EXPRESS}
     environment:
@@ -16,14 +16,23 @@ services:
   ngnix:
     container_name: ngnix_api
     build:
-      context: ./
-      dockerfile: ./nginx/Dockerfile
+      context: ./nginx
+      dockerfile: ./Dockerfile
     ports:
       - ${PORT_NGINX_DOCKER}:443
     networks:
       - sk3u4pp_network
     depends_on:
       - backend
+  redis:
+    container_name: redis
+    image: "redis"
+    ports:
+      - 6000:6379
+    networks:
+      - sk3u4pp_network
+    depends_on:
+      - ngnix
   postgres:
     container_name: template-ts-db
     image: "postgres:latest"
