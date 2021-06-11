@@ -1,0 +1,6 @@
+.build
+.gitignore
+prisma/
+husky.config.js
+Dockerfile
+.dockerignore
